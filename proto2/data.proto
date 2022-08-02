@@ -1,0 +1,53 @@
+syntax = "proto2";
+
+message Types{
+	optional double double = 1 [default = 10];
+	required float float = 2;
+	required int32 int32 = 3;
+	required int64 int64 = 4;
+	required uint32 uint32 = 5;
+	required uint64 uint64 = 6;
+	required sint32 sint32 = 7;
+	required sint64 sint64 = 8;
+	required fixed32 fixed32 = 9;
+	required fixed64 fixed64 = 10;
+	required sfixed32 sfixed32 = 11;
+	required sfixed64 sfixed64 = 12;
+	required bool bool = 13;
+	required string string = 14;
+	required bytes bytes = 15;
+}
+
+message Mas{
+	repeated double double = 1;
+	repeated float float = 2;
+	repeated int32 int32 = 3;
+	repeated int64 int64 = 4;
+	repeated uint32 uint32 = 5;
+	repeated uint64 uint64 = 6;
+	repeated sint32 sint32 = 7;
+	repeated sint64 sint64 = 8;
+	repeated fixed32 fixed32 = 9;
+	repeated fixed64 fixed64 = 10;
+	repeated sfixed32 sfixed32 = 11;
+	repeated sfixed64 sfixed64 = 12;
+	repeated bool bool = 13;
+	repeated string string = 14;
+	repeated bytes bytes = 15;
+}
+
+message Enum{
+	enum Status{
+		FIRST= 0;
+		SECOND = 1;
+		THIRD = 2;
+	}
+	optional Status status = 1[default = SECOND];
+}
+
+message Father{
+	message Daughter{
+	required string name = 1;
+    }
+	repeated Daughter daughter = 1; 
+}
